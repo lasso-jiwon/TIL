@@ -10,6 +10,8 @@
 
 * 폴더를 이동하는 명령어
 * `cd <directory name>` cd 하고 이동하고 싶은 폴더 이름 쓰기
+  * 예) `cd desktop` : 데스크탑으로 이동하기
+* `cd ..`  상위 폴더로 이동하기
 
 
 
@@ -34,6 +36,7 @@
 
 * 폴더를 생성하는 명령어
 * `mkdir <directory name>`
+  * 예) `mkdir first` : first 라는 폴더 만들기
 
 
 
