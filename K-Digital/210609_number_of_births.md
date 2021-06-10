@@ -41,7 +41,7 @@ df_kosis.head()
     .dataframe tbody tr th {
         vertical-align: top;
     }
-
+    
     .dataframe thead th {
         text-align: right;
     }
@@ -5082,7 +5082,7 @@ df_kosis.head(2)
     .dataframe tbody tr th {
         vertical-align: top;
     }
-
+    
     .dataframe thead th {
         text-align: right;
     }
@@ -7611,7 +7611,7 @@ df.head()
     .dataframe tbody tr th {
         vertical-align: top;
     }
-
+    
     .dataframe thead th {
         text-align: right;
     }
@@ -7710,7 +7710,7 @@ df[df['시군구별']=='시군구별']
     .dataframe tbody tr th {
         vertical-align: top;
     }
-
+    
     .dataframe thead th {
         text-align: right;
     }
@@ -7834,7 +7834,7 @@ df.head()
     .dataframe tbody tr th {
         vertical-align: top;
     }
-
+    
     .dataframe thead th {
         text-align: right;
     }
@@ -7902,7 +7902,7 @@ df.tail()
     .dataframe tbody tr th {
         vertical-align: top;
     }
-
+    
     .dataframe thead th {
         text-align: right;
     }
@@ -8024,7 +8024,7 @@ df['variable'].str.split(".",expand=True).head()
     .dataframe tbody tr th {
         vertical-align: top;
     }
-
+    
     .dataframe thead th {
         text-align: right;
     }
@@ -8101,7 +8101,7 @@ df.head()
     .dataframe tbody tr th {
         vertical-align: top;
     }
-
+    
     .dataframe thead th {
         text-align: right;
     }
@@ -8187,7 +8187,7 @@ df.tail()
     .dataframe tbody tr th {
         vertical-align: top;
     }
-
+    
     .dataframe thead th {
         text-align: right;
     }
@@ -8358,7 +8358,7 @@ df.head()
     .dataframe tbody tr th {
         vertical-align: top;
     }
-
+    
     .dataframe thead th {
         text-align: right;
     }
@@ -8444,7 +8444,7 @@ df.tail()
     .dataframe tbody tr th {
         vertical-align: top;
     }
-
+    
     .dataframe thead th {
         text-align: right;
     }
@@ -8525,9 +8525,9 @@ df['성별'].value_counts()
 
 
 
-    전체    4968
-    여     4968
     남     4968
+    여     4968
+    전체    4968
     Name: 성별, dtype: int64
 
 
@@ -8555,7 +8555,7 @@ df.head()
     .dataframe tbody tr th {
         vertical-align: top;
     }
-
+    
     .dataframe thead th {
         text-align: right;
     }
@@ -8659,7 +8659,7 @@ df.sample(10)
     .dataframe tbody tr th {
         vertical-align: top;
     }
-
+    
     .dataframe thead th {
         text-align: right;
     }
@@ -8678,93 +8678,93 @@ df.sample(10)
   </thead>
   <tbody>
     <tr>
-      <th>2914</th>
-      <td>대전광역시</td>
-      <td>2001. 04</td>
-      <td>1509</td>
-      <td>2001</td>
-      <td>04</td>
-      <td>전체</td>
-    </tr>
-    <tr>
-      <th>7889</th>
-      <td>대구광역시</td>
-      <td>2008. 07.1</td>
-      <td>887</td>
-      <td>2008</td>
-      <td>07</td>
+      <th>10225</th>
+      <td>부산광역시</td>
+      <td>2011. 12.1</td>
+      <td>1001</td>
+      <td>2011</td>
+      <td>12</td>
       <td>남</td>
     </tr>
     <tr>
-      <th>1065</th>
-      <td>전국</td>
-      <td>1998. 07.2</td>
-      <td>23845</td>
-      <td>1998</td>
+      <th>14703</th>
+      <td>경상북도</td>
+      <td>2018. 06.2</td>
+      <td>622</td>
+      <td>2018</td>
+      <td>06</td>
+      <td>여</td>
+    </tr>
+    <tr>
+      <th>14708</th>
+      <td>서울특별시</td>
+      <td>2018. 07</td>
+      <td>4845</td>
+      <td>2018</td>
+      <td>07</td>
+      <td>전체</td>
+    </tr>
+    <tr>
+      <th>9962</th>
+      <td>광주광역시</td>
+      <td>2011. 07.2</td>
+      <td>543</td>
+      <td>2011</td>
       <td>07</td>
       <td>여</td>
     </tr>
     <tr>
-      <th>2175</th>
-      <td>세종특별자치시</td>
-      <td>2000. 03</td>
-      <td>-</td>
-      <td>2000</td>
-      <td>03</td>
-      <td>전체</td>
+      <th>3475</th>
+      <td>경상남도</td>
+      <td>2002. 01.2</td>
+      <td>1398</td>
+      <td>2002</td>
+      <td>01</td>
+      <td>여</td>
     </tr>
     <tr>
-      <th>2374</th>
-      <td>제주특별자치도</td>
-      <td>2000. 06.1</td>
-      <td>308</td>
-      <td>2000</td>
+      <th>1285</th>
+      <td>충청북도</td>
+      <td>1998. 11.1</td>
+      <td>860</td>
+      <td>1998</td>
+      <td>11</td>
+      <td>남</td>
+    </tr>
+    <tr>
+      <th>5105</th>
+      <td>충청남도</td>
+      <td>2004. 06.1</td>
+      <td>763</td>
+      <td>2004</td>
       <td>06</td>
       <td>남</td>
     </tr>
     <tr>
-      <th>5702</th>
-      <td>서울특별시</td>
-      <td>2005. 05</td>
-      <td>7431</td>
-      <td>2005</td>
-      <td>05</td>
-      <td>전체</td>
-    </tr>
-    <tr>
-      <th>8224</th>
-      <td>경상북도</td>
-      <td>2009. 01</td>
-      <td>2189</td>
-      <td>2009</td>
-      <td>01</td>
-      <td>전체</td>
-    </tr>
-    <tr>
-      <th>11610</th>
-      <td>전국</td>
-      <td>2013. 12.2</td>
-      <td>15723</td>
-      <td>2013</td>
+      <th>4071</th>
+      <td>인천광역시</td>
+      <td>2002. 12.1</td>
+      <td>1007</td>
+      <td>2002</td>
       <td>12</td>
+      <td>남</td>
+    </tr>
+    <tr>
+      <th>9047</th>
+      <td>부산광역시</td>
+      <td>2010. 03.2</td>
+      <td>1091</td>
+      <td>2010</td>
+      <td>03</td>
       <td>여</td>
     </tr>
     <tr>
-      <th>9528</th>
-      <td>세종특별자치시</td>
-      <td>2010. 12</td>
-      <td>-</td>
-      <td>2010</td>
-      <td>12</td>
-      <td>전체</td>
-    </tr>
-    <tr>
-      <th>9295</th>
-      <td>대구광역시</td>
-      <td>2010. 08</td>
-      <td>1674</td>
-      <td>2010</td>
-      <td>08</td>
+      <th>5027</th>
+      <td>강원도</td>
+      <td>2004. 05</td>
+      <td>1154</td>
+      <td>2004</td>
+      <td>05</td>
       <td>전체</td>
     </tr>
   </tbody>
@@ -8797,7 +8797,7 @@ df.sample(10)
     .dataframe tbody tr th {
         vertical-align: top;
     }
-
+    
     .dataframe thead th {
         text-align: right;
     }
@@ -8816,94 +8816,94 @@ df.sample(10)
   </thead>
   <tbody>
     <tr>
-      <th>10649</th>
-      <td>세종특별자치시</td>
-      <td>2012. 07.2</td>
-      <td>53</td>
-      <td>2012</td>
+      <th>13513</th>
+      <td>대구광역시</td>
+      <td>2016. 10</td>
+      <td>1389</td>
+      <td>2016</td>
+      <td>10</td>
+      <td>전체</td>
+    </tr>
+    <tr>
+      <th>469</th>
+      <td>충청남도</td>
+      <td>1997. 09</td>
+      <td>2027</td>
+      <td>1997</td>
+      <td>09</td>
+      <td>전체</td>
+    </tr>
+    <tr>
+      <th>4063</th>
+      <td>경상북도</td>
+      <td>2002. 12</td>
+      <td>1889</td>
+      <td>2002</td>
+      <td>12</td>
+      <td>전체</td>
+    </tr>
+    <tr>
+      <th>4497</th>
+      <td>충청남도</td>
+      <td>2003. 07.2</td>
+      <td>685</td>
+      <td>2003</td>
       <td>07</td>
       <td>여</td>
     </tr>
     <tr>
-      <th>3722</th>
-      <td>경상남도</td>
-      <td>2002. 06</td>
-      <td>2439</td>
-      <td>2002</td>
-      <td>06</td>
-      <td>전체</td>
-    </tr>
-    <tr>
-      <th>1086</th>
-      <td>부산광역시</td>
-      <td>1998. 08</td>
-      <td>3359</td>
-      <td>1998</td>
-      <td>08</td>
-      <td>전체</td>
-    </tr>
-    <tr>
-      <th>670</th>
-      <td>인천광역시</td>
-      <td>1997. 12.2</td>
-      <td>1567</td>
-      <td>1997</td>
-      <td>12</td>
-      <td>여</td>
-    </tr>
-    <tr>
-      <th>4098</th>
-      <td>충청남도</td>
-      <td>2002. 12.2</td>
-      <td>669</td>
-      <td>2002</td>
-      <td>12</td>
-      <td>여</td>
-    </tr>
-    <tr>
-      <th>13637</th>
+      <th>7462</th>
       <td>전라북도</td>
-      <td>2016. 12</td>
-      <td>811</td>
-      <td>2016</td>
-      <td>12</td>
-      <td>전체</td>
+      <td>2007. 11.2</td>
+      <td>664</td>
+      <td>2007</td>
+      <td>11</td>
+      <td>여</td>
     </tr>
     <tr>
-      <th>7729</th>
-      <td>전라남도</td>
-      <td>2008. 04.1</td>
-      <td>686</td>
-      <td>2008</td>
-      <td>04</td>
+      <th>15639</th>
+      <td>서울특별시</td>
+      <td>2019. 11.1</td>
+      <td>2128</td>
+      <td>2019</td>
+      <td>11</td>
       <td>남</td>
     </tr>
     <tr>
-      <th>6965</th>
+      <th>14388</th>
+      <td>인천광역시</td>
+      <td>2018. 01.1</td>
+      <td>1037</td>
+      <td>2018</td>
+      <td>01</td>
+      <td>남</td>
+    </tr>
+    <tr>
+      <th>15705</th>
       <td>강원도</td>
-      <td>2007. 03</td>
-      <td>1160</td>
-      <td>2007</td>
-      <td>03</td>
-      <td>전체</td>
+      <td>2019. 12.1</td>
+      <td>326</td>
+      <td>2019</td>
+      <td>12</td>
+      <td>남</td>
     </tr>
     <tr>
-      <th>7872</th>
-      <td>광주광역시</td>
-      <td>2008. 07</td>
-      <td>1171</td>
-      <td>2008</td>
-      <td>07</td>
-      <td>전체</td>
-    </tr>
-    <tr>
-      <th>4284</th>
+      <th>3467</th>
       <td>세종특별자치시</td>
-      <td>2003. 04</td>
+      <td>2002. 01.2</td>
       <td>NaN</td>
-      <td>2003</td>
-      <td>04</td>
-      <td>전체</td>
+      <td>2002</td>
+      <td>01</td>
+      <td>여</td>
+    </tr>
+    <tr>
+      <th>15486</th>
+      <td>전국</td>
+      <td>2019. 08.2</td>
+      <td>11880</td>
+      <td>2019</td>
+      <td>08</td>
+      <td>여</td>
     </tr>
   </tbody>
 </table>
@@ -8947,12 +8947,16 @@ df['출생아수'].astype(int)
 
 
     ---------------------------------------------------------------------------
-
-    ValueError                                Traceback (most recent call last)
-
-    <ipython-input-80-9b5ee33b496e> in <module>
-    ----> 1 df['출생아수'].astype(int)
     
+    ValueError                                Traceback (most recent call last)
+    
+    <ipython-input-91-d644e320bbbe> in <module>
+          1 # int 타입으로 바꿔볼까????
+    ----> 2 df['출생아수'].astype(int)
+          3 
+          4 # 오류가 떠....ㅠㅠㅠ nan 값 때문에 정수형으로 바꿀 수가 없대
+          5 # ValueError: cannot convert float NaN to integer
+
 
     ~/opt/anaconda3/lib/python3.8/site-packages/pandas/core/generic.py in astype(self, dtype, copy, errors)
        5544         else:
@@ -9115,7 +9119,7 @@ df_all.head()
     .dataframe tbody tr th {
         vertical-align: top;
     }
-
+    
     .dataframe thead th {
         text-align: right;
     }
@@ -9203,7 +9207,7 @@ df_all.head()
     .dataframe tbody tr th {
         vertical-align: top;
     }
-
+    
     .dataframe thead th {
         text-align: right;
     }
@@ -9291,7 +9295,7 @@ df_all.tail()
     .dataframe tbody tr th {
         vertical-align: top;
     }
-
+    
     .dataframe thead th {
         text-align: right;
     }
@@ -9397,7 +9401,7 @@ df_all.set_index(['연도', '월'])
     .dataframe tbody tr th {
         vertical-align: top;
     }
-
+    
     .dataframe thead th {
         text-align: right;
     }
@@ -9543,9 +9547,9 @@ df_all.set_index(['연도', '월']).plot()
 
 
 
-    
-![png](output_59_1.png)
-    
+![output_59_1](210609_number_of_births.assets/121467322-d738ec80-c9f3-11eb-8e54-4d8cabf1e709.png)
+
+
 
 
 
@@ -9562,8 +9566,7 @@ df_all.set_index(['연도', '월']).plot(figsize=(15,4))
 
 
 
-    
-![png](output_60_1.png)
+![output_60_1](210609_number_of_births.assets/121467328-d7d18300-c9f3-11eb-9206-35117be6f1c6.png)
     
 
 
@@ -9584,8 +9587,7 @@ df_all.set_index(['연도', '월']).plot(kind='bar', figsize=(15, 4))
 
 
 
-    
-![png](output_61_1.png)
+![output_61_1](210609_number_of_births.assets/121467330-d86a1980-c9f3-11eb-8fc7-a006b2495cea.png)
     
 
 
@@ -9605,8 +9607,7 @@ df_all[-24:].set_index(['연도', '월']).plot(kind='bar', figsize=(15, 4))
 
 
 
-    
-![png](output_63_1.png)
+![output_63_1](210609_number_of_births.assets/121467331-d902b000-c9f3-11eb-8575-fc03faf50d96.png)
     
 
 
@@ -9628,7 +9629,7 @@ df_all[-24:]
     .dataframe tbody tr th {
         vertical-align: top;
     }
-
+    
     .dataframe thead th {
         text-align: right;
     }
@@ -9882,8 +9883,7 @@ df_all[-36:].set_index(['연도', '월']).plot(kind='bar', figsize=(15, 4))
 
 
 
-    
-![png](output_65_1.png)
+![output_65_1](210609_number_of_births.assets/121467333-d99b4680-c9f3-11eb-89de-dbf1e3ee0285.png)
     
 
 
@@ -9907,7 +9907,7 @@ df_all.head()
     .dataframe tbody tr th {
         vertical-align: top;
     }
-
+    
     .dataframe thead th {
         text-align: right;
     }
@@ -9992,8 +9992,7 @@ sns.lineplot(data = df_all, x = '연도', y = '출생아수')
 
 
 
-    
-![png](output_68_1.png)
+![output_68_1](210609_number_of_births.assets/121467336-d99b4680-c9f3-11eb-86bd-3a0f653b17be.png)
     
 
 
@@ -10012,8 +10011,7 @@ sns.lineplot(data = df_all, x = '연도', y = '출생아수', ci=None)
 
 
 
-    
-![png](output_69_1.png)
+![output_69_1](210609_number_of_births.assets/121467337-da33dd00-c9f3-11eb-96f2-941cd92df25d.png)
     
 
 
@@ -10032,8 +10030,7 @@ sns.lineplot(data = df_all, x = '연도', y = '출생아수', ci=None, hue = '�
 
 
 
-    
-![png](output_70_1.png)
+![output_70_1](210609_number_of_births.assets/121467339-da33dd00-c9f3-11eb-9fc8-adf945469246.png)
     
 
 
@@ -10062,20 +10059,19 @@ sns.barplot(data = df_all, x = '연도', y = '출생아수', ci=None, hue = '월
 
 
 
-    
-![png](output_72_1.png)
-    
-
-
-
-    
-![png](output_72_2.png)
+![output_72_1](210609_number_of_births.assets/121467342-dacc7380-c9f3-11eb-8019-2a199edb6f2b.png)
     
 
 
 
+
+![output_72_2](210609_number_of_births.assets/121467344-db650a00-c9f3-11eb-922f-5d6138c4b395.png)
     
-![png](output_72_3.png)
+
+
+
+
+![output_72_3](210609_number_of_births.assets/121467346-db650a00-c9f3-11eb-874f-1be1c404af2e.png)
     
 
 
@@ -10104,7 +10100,7 @@ df_local.head()
     .dataframe tbody tr th {
         vertical-align: top;
     }
-
+    
     .dataframe thead th {
         text-align: right;
     }
@@ -10202,8 +10198,7 @@ sns.pointplot(data = df_local, x = '연도', y = '출생아수')
 
 
 
-    
-![png](output_77_1.png)
+![output_77_1](210609_number_of_births.assets/121467347-dbfda080-c9f3-11eb-8950-6a3f40cee5fc.png)
     
 
 
@@ -10222,8 +10217,7 @@ sns.pointplot(data = df_local, x = '연도', y = '출생아수', hue = '성별')
 
 
 
-    
-![png](output_78_1.png)
+![output_78_1](210609_number_of_births.assets/121467348-dbfda080-c9f3-11eb-9fd0-a2f37744a1a2.png)
     
 
 
@@ -10247,7 +10241,7 @@ df_local_all.head()
     .dataframe tbody tr th {
         vertical-align: top;
     }
-
+    
     .dataframe thead th {
         text-align: right;
     }
@@ -10331,8 +10325,7 @@ sns.pointplot(data = df_local_all, x = '연도', y = '출생아수')
 
 
 
-    
-![png](output_81_1.png)
+![output_81_1](210609_number_of_births.assets/121467349-dc963700-c9f3-11eb-8787-76ac9bb5eec4.png)
     
 
 
@@ -10352,13 +10345,12 @@ plt.legend(loc='center right', bbox_to_anchor=(1.17, 0.5), ncol=1)
 
 
 
-    <matplotlib.legend.Legend at 0x7ffd0ec57370>
+    <matplotlib.legend.Legend at 0x7ff36a6d6070>
 
 
 
 
-    
-![png](output_82_1.png)
+![output_82_1](210609_number_of_births.assets/121467354-dd2ecd80-c9f3-11eb-9071-5853a3f643bc.png)
     
 
 
@@ -10394,27 +10386,48 @@ sns.pointplot(data = df_local_2, x = '연도', y = '출생아수', hue='시군�
 
 
 
+![output_84_1](210609_number_of_births.assets/121467357-ddc76400-c9f3-11eb-8c67-4756f4d66f8e.png)
     
-![png](output_84_1.png)
+
+
+## 세종특별자치시만 연도별 출생수를 확인해보자
+
+
+```python
+df_local_sj = df_local_2[df_local_2['시군구별']=='세종특별자치시'].dropna().head()
+```
+
+
+```python
+# 세종특별자치시만 살펴보자!
+df_local_sj = df_local_2[df_local_2['시군구별']=='세종특별자치시'].dropna()  #dropna()로 na값을 빼준다
+df_local_sj['시군구별'].unique()
+```
+
+
+
+
+    array(['세종특별자치시'], dtype=object)
+
+
+
+
+```python
+# 세종특별자치시 
+plt.figure(figsize=(12,4))
+sns.pointplot(data=df_local_sj, x = '연도', y = '출생아수')
+```
+
+
+
+
+    <AxesSubplot:xlabel='연도', ylabel='출생아수'>
+
+
+
+
+![output_88_1](210609_number_of_births.assets/121467359-de5ffa80-c9f3-11eb-81e0-48924a5fc599.png)
     
 
 
 
-```python
-
-```
-
-
-```python
-
-```
-
-
-```python
-
-```
-
-
-```python
-
-```
