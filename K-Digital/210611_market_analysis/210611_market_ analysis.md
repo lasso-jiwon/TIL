@@ -7,7 +7,6 @@ import seaborn as sns
 ```
 
 # 한글화
-
 ```python
 fm = mp.font_manager.FontManager()
 # 한글 지원하는 폰트명으로 재할당
@@ -54,7 +53,7 @@ df.head()
     .dataframe tbody tr th {
         vertical-align: top;
     }
-
+    
     .dataframe thead th {
         text-align: right;
     }
@@ -289,7 +288,7 @@ df.isnull()
     .dataframe tbody tr th {
         vertical-align: top;
     }
-
+    
     .dataframe thead th {
         text-align: right;
     }
@@ -721,9 +720,9 @@ msno.matrix(df)
 
 
 
-    
+​    
 ![png](output_17_1.png)
-    
+​    
 
 
 # 데이터 수 확인하기
@@ -802,9 +801,9 @@ plt.yticks(fontsize = 14, color = 'w')
 
 
 
-    
+​    
 ![png](output_21_1.png)
-    
+​    
 
 
 
@@ -854,9 +853,9 @@ plt.yticks(fontsize = 14, color = 'w')
 
 
 
-    
+​    
 ![png](output_23_1.png)
-    
+​    
 
 
 # 스타벅스와 이디야
@@ -897,7 +896,7 @@ dataset.head()
     .dataframe tbody tr th {
         vertical-align: top;
     }
-
+    
     .dataframe thead th {
         text-align: right;
     }
@@ -1004,7 +1003,7 @@ df_coffee.head()
     .dataframe tbody tr th {
         vertical-align: top;
     }
-
+    
     .dataframe thead th {
         text-align: right;
     }
@@ -1302,7 +1301,7 @@ df_seoul_starbucks.head()
     .dataframe tbody tr th {
         vertical-align: top;
     }
-
+    
     .dataframe thead th {
         text-align: right;
     }
@@ -1420,7 +1419,7 @@ df_seoul_edi.head()
     .dataframe tbody tr th {
         vertical-align: top;
     }
-
+    
     .dataframe thead th {
         text-align: right;
     }
@@ -1526,7 +1525,7 @@ df_coffee_star_edi.head()
     .dataframe tbody tr th {
         vertical-align: top;
     }
-
+    
     .dataframe thead th {
         text-align: right;
     }
@@ -1634,7 +1633,7 @@ df_coffee_star_edi.head()
     .dataframe tbody tr th {
         vertical-align: top;
     }
-
+    
     .dataframe thead th {
         text-align: right;
     }
@@ -1746,7 +1745,7 @@ df_coffee_star_edi.head()
     .dataframe tbody tr th {
         vertical-align: top;
     }
-
+    
     .dataframe thead th {
         text-align: right;
     }
@@ -1956,7 +1955,7 @@ df_coffee_brand.head()
     .dataframe tbody tr th {
         vertical-align: top;
     }
-
+    
     .dataframe thead th {
         text-align: right;
     }
@@ -2036,9 +2035,9 @@ plt.yticks(fontsize = 14, color = 'w')
 
 
 
-    
+​    
 ![png](output_57_1.png)
-    
+​    
 
 
 
