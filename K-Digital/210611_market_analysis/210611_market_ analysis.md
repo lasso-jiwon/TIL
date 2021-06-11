@@ -8,7 +8,6 @@ import seaborn as sns
 
 # 한글화
 
-
 ```python
 fm = mp.font_manager.FontManager()
 # 한글 지원하는 폰트명으로 재할당
