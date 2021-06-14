@@ -70,3 +70,43 @@ FROM customers;
 # count(컬럼명) : NULL이 아닌 전체 레코드 수를 리턴한다.alter
 SELECT count(employeeNumber), count(reportsTO), count(*)
 FROM employees;
+
+
+#___
+
+# JOIN
+SELECT * FROM orders;
+SELECT * FROM customers;
+# 두개의 테이블에 같은 종류의 데이터가 저장되어있는지 살펴본다.
+
+# orders 테이블과 customers 테이블에 customerNumber 데이터가 동일하다.
+# 조인함수로 두개 테이블 결합하기
+SELECT * FROM orders LEFT JOIN customers
+ON orders.customerNumber = customers.customerNumber;
+
+# LEFT JOIN (A 테이블은 모두, B는 공통적인 것만 가지고 오겠다)
+SELECT o.orderNumber, o.orderNumber,  c.customerNumber
+FROM orders o LEFT JOIN customers c
+ON o.customerNUmber = c.customerNumber;
+
+# INNER JOIN (두개 테이블에 공통적인 것만 가져옴)
+SELECT o.orderNumber, o.orderNumber,  c.customerNumber
+FROM orders o INNER JOIN customers c
+ON o.customerNUmber = c.customerNumber;
+
+# LEFT JOIN 과 INNER JOIN 갯수가 같음 즉 o.customerNumber과 c.customerNumber 가 일치함
+
+# p.56 페이지 북미, 비북미 출력하기
+# 나라가 USA, Canada 면 North America로 출력, 아니면 OTHERS로 출력
+SELECT country,
+CASE WHEN country in ('USA', 'Canada') then 'North America' ELSE 'OTHERS' END AS region
+FROM classicmodels.customers
+
+# p.57 classicmodels.crstomers의 country 칼럼을 이용해 북미, 비북미를 출력하는 칼럼을 생성하고, 북미, 비북미 거주 고객의 수를 계산하세요.
+SELECT CASE WHEN country IN ('USA', 'Canada') then 'North America'
+ELSE 'OTHERS' END AS region,
+COUNT(customerNumber) N_customers
+FROM classicmodels.customers
+GROUP
+BY CASE WHEN country IN ('USA', 'Canada') then 'North America'
+ELSE 'OTHERS' END
