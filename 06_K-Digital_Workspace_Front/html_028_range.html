@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>html_028_range</title>
+</head>
+<body>
+<!-- 
+type="range"
+1. 특정 범위의 숫자를 선택할 때 사용
+2. 슬라이드로 선택한 숫자는 텍스트로 표현되지 않으므로 
+    javascript를 이용해서 표시해 주어야 한다. 
+       그리고 범위와 증가 값은 number 유형과 동일하다. 
+    min과 max를 이용해서 범위를 지정하고 step으로 증가 값을 세팅해야 한다.
+ -->
+	<form>
+		<h3>0~100 범위에서 원하는 지점을 선택하세요.</h3>
+		<input type="range" name="point" min="0" max="100">
+		<p></p>
+		<input type="submit" value="완료"> 
+		<input type="reset" value="초기화">
+	</form>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>html_016_form</title>
+</head>
+<body>
+<!-- 
+ form요소는 웹 문서에서 서로 상호작용을 할 수 있도록 하는 역할을 담당한다.
+   <form>
+     클라이언트로 부터 입력받아 서버로 보내기위한 요소를 작성한다.
+   </form>
+   
+   action 속성 : form의 내용을 처리하기 위한 서버URI을 설정한다.
+   method 속성 : 클라이언트의 데이터를 서버로 보내기 위한 방법을 설정한다.
+        값 get은 폼의 내용을 서버로 전송할때 255바이트 이하까지만 전송할 수 있고
+         주소표시줄에 전송되는 값이 노출이 된다.
+        값 post은 폼의 내용을 서버로 전송할때 255바이트보다 크거나 보안이 필요한데이터를
+         보낼때 설정한다.
+    enctype 속성: 전송할 데이터에 첨부파일이 없을때는
+          enctype="application/x-www-form-urlencoded" 를 지정하고
+          첨부파일이 있을때는
+         enctype="multipart/form-data" 를 지정한다.
+   fieldset 요소 : 여러개의 폼 요소를 그룹화 할때 사용한다.
+   legend 요소 : 폼요소 그룹화 설정된 것에 대한 제목을 지정한다.
+   label요소 :  텍스트와 폼요소의 상관관계를 설정한다.
+    for속성 : 속성 값으로 포커스를 이동하기 위해서 설정한다.
+ -->
+
+	<form action="html_016_process.jsp" method="get" 
+		enctype="application/x-www-form-urlencoded">
+		<fieldset>
+			<legend>로그인</legend>
+			<label for="fid">아이디</label> 
+			<input type="text" name="fid" id="fid" />
+
+			<label for="fpass">비밀번호</label> 
+			<input type="password" name="fpass" id="fpass" />
+		</fieldset>
+		<input type="submit" value="로그인">
+	</form>
+	
+	 <form action="html_016_process.jsp" method="post"
+       enctype="application/x-www-form-urlencoded">
+       <fieldset>
+         <legend>로그인</legend>
+         <input type="text" name="fid" id="fid" placeholder="아이디"/>
+         <input type="password" name="fpass" id="fpass" 
+                placeholder="비밀번호" />
+       </fieldset>
+         <input type="submit" value="로그인" />
+    </form> 
+</body>
+</html>
+
+
+
+
+
+
+

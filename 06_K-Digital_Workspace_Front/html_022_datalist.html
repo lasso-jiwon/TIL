@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>html_022_datalist.html</title>
+</head>
+<body>
+<!--
+ datalist 요소
+1. datalist요소는 html5요소에 새로 추가된 속성으로 form요소에서 미리 지정된 
+     옵션 목록을 제공함.
+2. 사용자들이 특정 글자를 입력하면 그에 해당하는 미리 지정된 목록을 보여줌.
+3. <datalist>요소를 사용할 때 주의할 점은 <input>요소에서 list의 속성값과
+    datalist의 id값이 일치해야한다
+-->
+	<h3>선택사항을 직접 입력하세요.</h3>
+	<form>
+		<label for="major">전공 분야를 입력하세요.</label>
+		 <input type="text" list="majorlist" 
+			name="major" id="major"> 
+			<datalist id="majorlist">
+				<option value="Software">소프트웨어</option>
+				<option value="Robot">로봇</option>
+				<option value="System">시스템</option>
+				<option value="Service">서비스</option>
+				<option value="Education">교육</option>
+			</datalist><br/>
+			 <input type="submit" value="완료"> 
+			 <input type="reset"  value="다시작성">		
+	</form>
+</body>
+</html>

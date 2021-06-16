@@ -1,0 +1,70 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+div {
+	width: 200px;
+	height: 200px;
+	text-shadow: 1px 1px 1px #cccccc;
+	border-style: groove;
+}
+
+td {
+	font-weight: bold;
+}
+
+table {
+	width: 600px;
+	border: 1px solid black;
+}
+</style>
+</head>
+<body>
+	<table>
+		<tr>
+			<td width="100">이름</td>
+			<td><input type="text" /></td>
+		</tr>
+		<tr>
+			<td>아이디</td>
+			<td><input type="text" /></td>
+		</tr>
+		<tr>
+			<td>비밀번호</td>
+			<td><input type="text" />
+				<button>중복체크</button></td>
+		</tr>
+		<tr>
+			<td>비밀번호확인</td>
+			<td><input type="text" /></td>
+		</tr>
+		<tr>
+			<td>이메일</td>
+			<td><input type="text" />@ <select>
+					<option>선택하세요</option>
+			</select> <input type="text" /></td>
+		</tr>
+		<tr>
+			<td>연락처</td>
+			<td><input type="text" size="10" /></td>
+		</tr>
+		<tr>
+			<td>메일수신여부</td>
+			<td><input type="radio" />받음 <input type="radio" /> 받지않음</td>
+		</tr>
+		<tr>
+			<td>관심분야</td>
+			<td><input type="checkbox" />자바 <input type="checkbox" /> C++ <input
+				type="checkbox" /> 파이썬 <input type="checkbox" /> 안드로이드</td>
+		</tr>
+		
+		<tr>
+		  <td colspan="2">
+		  <input type="reset" value="취소"/>
+		  <input type="submit" value="저장"/></td>
+		</tr>
+	</table>
+
+</body>
+
+</html>

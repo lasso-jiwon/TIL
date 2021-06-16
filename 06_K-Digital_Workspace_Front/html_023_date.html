@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>html_024_date</title>
+</head>
+<body>
+<!-- 
+type="date"
+1. 년-월-일 단위로 원하는 날짜 입력할 수 있음
+
+ -->
+	<form>
+		<h3>오늘 날짜 입력</h3>
+		Today : <input type="date" name="today">
+		<h3>프로젝트 수행 기간</h3>
+		From : <input type="date" name="from" 
+		               min="2016-03-01" max="2016-12-31"> 
+		To : <input type="date" name="to"
+		  	   min="2018-03-01" max="2018-06-30">
+		<br/>
+		<input type="submit" value="제출"> 
+		<input type="reset" value="다시작성">
+	</form>
+</body>
+</html>

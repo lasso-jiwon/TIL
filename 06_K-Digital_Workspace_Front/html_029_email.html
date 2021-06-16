@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>html_029_email</title>
+</head>
+<body>
+<!-- 
+type="email"
+1. 타입이 email 값일 때 전송을 하게 되면 input에 입력한 값이 
+     이메일 형식에 맞는지 체크하게 된다. 
+2. 메일 구성요소 중 “@” 가 빠지면 전송할때  입력창 하단에 
+      풍선 도움말로 제대로 입력하지 않았다고 알려 준다. 
+    이전에는 정규식을 사용해서 입력한 값을 체크했다. 
+ -->
+	<form>
+		<h3>이메일을 정확하게 입력하세요.</h3>
+		이메일 : <input type="email" name="myemail">
+		<p></p>
+		<input type="submit" value="제출"> 
+		<input type="reset"	value="다시작성">
+	</form>
+</body>
+</html>
