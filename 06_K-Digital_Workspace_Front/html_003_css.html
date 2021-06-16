@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>html_003_css</title>
+<!-- external style(외부스타일) -->
+<link href="outer.css" rel="stylesheet" type="text/css" />
+
+<!-- internal style(내부스타일) -->
+<style type="text/css">
+  .one{
+       background-color: blue
+  }
+</style>
+</head>
+<body>
+<div class="one">internal style</div>
+<div id="two">external style</div>
+<div id="three" style="color:purple">inline style</div>
+<!--  
+   css(Cascading Style Sheet)는 웹페이지의 요소들에 단계적으로 적용할 수 있는 스타일들의
+     모임이다.
+    W3c에서 표준을 제정하며 CSS는 웹페이지의 스타일(모양,크기, 색상, 간격등)을 정의하여
+    웹페이지의 요소를 표현하는데 사용된다.
+    CSS의 구문형식
+    selector {property:value; property:value}
+    
+    selector : 스타일이 적용될 범위를 지정하는 선택자이다. 선택자로 지정할 수 있는 종류는
+               요소명, id, class, 속성들을 사용할 수 있다.
+    property : 프로퍼티의 이름을 지정한다.
+    value : 프로퍼티의 값을 지정한다.
+    
+    스타일은 인라인스타일 , internal스타일, external스타일이 있다.
+        인라인스타일 > internal스타일> external스타일
+       
+      p{color:red} -external
+      p{color:blue} -internal
+      p{color:green}  -inline
+        
+ -->
+</body>
+</html>

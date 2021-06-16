@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>html_013_table</title>
+<style type="text/css">
+ table{
+   background-color: yellow;
+   width:500px;
+ }
+ 
+ table, th, td{
+   border-width: 1px;
+   border-style: solid;
+   border-color: black;
+   border-collapse: collapse;
+ }
+</style>
+</head>
+<body>
+ <!-- 
+   <table>요소 :  2차원  격자모양의 표를 표시
+   <tr> 요소 : 표에서 행 구분
+   <td> 요소 : 표에서 열 구분
+   <th> 요소 : 표에서 제목 표시
+   <caption>요소 : 표 제목 표시
+   <thead> 요소 : 행그룹설정할때 제목 그룹 설정
+   <tfoot> 요소 : 행그룹설정할때 꼬리 그룹 설정
+   <tbody> 요소 : 행 그룹설정할때 내용 그룹 설정
+   colspan 속성 : 열병합 설정
+   rowspan 속성 : 행병합 설정
+   
+   colgroup 요소 : 테이블 열을 그룹화한다.
+   col 속성 : 테이블 열의 속성을 정의한다.
+  -->
+  
+  <table>
+   <caption>서적 구입 비용</caption>
+   <thead>
+     <tr>
+       <th>서적명</th> <th>출판사</th>
+       <th>가격</th>   <th>기타</th>
+     </tr>
+   </thead>
+   
+   <tfoot>
+    <tr>
+     <td colspan="2">합계</td>
+     <td>80,000원</td>
+     <td>&nbsp;</td>
+    </tr>
+   </tfoot>
+   
+   <tbody>  
+     <tr>
+      <td>HTML</td><td>제우스</td>
+      <td>30,000원</td><td rowspan="2">&nbsp;</td>
+     </tr>
+     <tr>
+      <td>JSP</td><td>가메</td>
+      <td>50,000원</td>
+     </tr>
+   </tbody>
+  </table>
+</body>
+</html>
+
+
+
+
+
+
+

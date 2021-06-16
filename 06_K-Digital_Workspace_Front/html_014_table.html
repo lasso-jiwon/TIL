@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>html_014_table</title>
+<style type="text/css">
+table {
+	background-color: yellow;
+	width: 500px;
+}
+
+table, th, td {
+	border-width: 1px;
+	border-style: solid;
+	border-color: black;
+	border-collapse: collapse;
+}
+</style>
+</head>
+<body>
+	<table>
+		<thead>
+			<tr>
+				<th rowspan="2">교실</th>
+				<th colspan="2" id="s">수강생</th>
+			</tr>
+			<tr>
+				<th id="m">남</th>
+				<th id="w">여</th>
+			</tr>
+		</thead>
+
+		<tfoot>
+			<tr>
+				<th>합계</th>
+				<td>43</td>
+				<td>15</td>
+			</tr>
+		</tfoot>
+
+		<tbody>
+			<tr>
+				<th id="L1">L1반</th>
+				<!-- 수강생 남  L1반  10 -->
+				<td headers="s m L1">10</td>
+				<!-- 수강생 여 L1반 5 -->
+				<td headers="s w L1">5</td>
+			</tr>
+			<tr>
+				<th id="L2">L2반</th>
+				<!-- 수강생 남 20 -->
+				<td headers="s m">20</td>
+				<!-- 수강생 여 2 -->
+				<td headers="s w">2</td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>
+
+
+
+
+
+
