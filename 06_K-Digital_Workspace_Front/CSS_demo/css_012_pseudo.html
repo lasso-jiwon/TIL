@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>css_012_pseudo</title>
+ <style type="text/css">
+
+ /* p요소의 첫번째 문장에만 쓰임 */
+  p:first-line{
+      background-color: yellow;
+  }
+
+/* p요소 시작할 때 저 문장이 들어감!! */
+  p:before{
+      content:'====CSS start==='
+  }
+/* p요소 끝날 때 이미지를 넣어라 */
+  p:after{
+      content:url('images/aa.jpg')
+  }
+  
+ </style>
+</head>
+<body>
+<p>
+IE8 and Opera 4-6 only support the old, single-colon CSS syntax  Newer versions support the standard, double-colon syntax.
+IE8 and Opera 4-6 only support the old, single-colon CSS syntax  Newer versions support the standard, double-colon syntax. 
+IE8 and Opera 4-6 only support the old, single-colon CSS syntax  Newer versions support the standard, double-colon syntax.
+IE8 and Opera 4-6 only support the old, single-colon CSS syntax  Newer versions support the standard, double-colon syntax.
+IE8 and Opera 4-6 only support the old, single-colon CSS syntax  Newer versions support the standard, double-colon syntax.
+IE8 and Opera 4-6 only support the old, single-colon CSS syntax  Newer versions support the standard, double-colon syntax.
+IE8 and Opera 4-6 only support the old, single-colon CSS syntax  Newer versions support the standard, double-colon syntax.
+IE8 and Opera 4-6 only support the old, single-colon CSS syntax  Newer versions support the standard, double-colon syntax.
+</p>
+</body>
+</html>

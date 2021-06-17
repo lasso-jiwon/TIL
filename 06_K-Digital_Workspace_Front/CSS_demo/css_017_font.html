@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>css_017_font</title>
+<style type="text/css">
+
+/* font에 관련된 스타일 */
+p{
+	/* 글꼴을 지정하는 스타일이다. 한글이나 공백이 있는 속성값은
+	묶어서 표현한다.*/
+	font-family: serif,"굴림", "Times New Roman";
+
+	/* 폰트 기울임을 지정한다.
+	oblique는 normal폰트를 기울인 것이고,
+	italic은 장식적인 요소가 가미된 기울임이다.*/
+	font-style:italic;
+
+	/* 폰트 굵기를 지정한다.*/
+	font-weight: bold;
+
+	/* 폰트 크기를 지정한다.*/
+	font-size: 20px;
+
+	/* 크기는 그대로 유지하고 소문자를 대문자로 변경한다.*/
+	font-variant: small-caps;
+}
+
+span{
+ /*
+   font속성에 다양한 값들을 지정할 수 있다. (순서 외울 필요는 없음)
+   font-style font-variant font-weight 
+       font-size/line-height font-family
+   
+   font-size와 font-family은 생략 할 수 없다!!!!!!
+ */
+ 
+ font: 30px "굴림체";
+}
+
+</style>
+</head>
+<body>
+	<p>웹 문서의 폰트를 지정할 때 사용한다. web document</p>
+	<span>폰트에 스타일 지정</span>
+</body>
+</html>
+
+
+
+

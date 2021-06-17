@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>css_015_background</title>
+<style type="text/css">
+* {
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+
+.dv1 {
+	background-color: yellow;
+	width: 100px;
+	height: 100px;
+}
+
+.dv2 {
+	width: 500px;
+	height: 500px;
+	background-color: gray;
+	background-image: url('./images/aa.jpg');
+	background-repeat: no-repeat;
+	background-position: 0px 100px; /* 이미지 위아래 위치 조정 */
+}
+
+.dv3 {
+	width: 300px;
+	height: 300px;
+	border: 2px solid black;
+	background-image: url('./images/aa.jpg');
+	background-repeat: no-repeat;
+	/* background-position: center; */
+	/* background-position: right bottom;  */
+	/* background-position: center bottom;  */
+	/* background-position: 100px -50px; */
+	background-position: 0px 0px;
+}
+
+.dv4 {
+	width: 300px;
+	height: 100px;
+	/* background-color: #ff0000;
+	background-repeat: no-repea;
+	background-image: url('./images/aa.jpg');
+	background-position: center; */
+	/*
+	background 단축속성 지정
+	background-color, background-image, 
+	background-position, background-size, 
+	background-repeat, background-origin, 
+	background-clip, and background-attachment*/
+	background: #ff0000 url('./images/aa.jpg') center no-repeat;
+}
+
+</style>
+</head>
+<body>
+	<div class="dv1">&nbsp;</div>
+	<div class="dv2">&nbsp;</div>
+	<div class="dv3">&nbsp;</div>
+	<div class="dv4">&nbsp;</div>
+</body>
+</html>
+
+
+
+

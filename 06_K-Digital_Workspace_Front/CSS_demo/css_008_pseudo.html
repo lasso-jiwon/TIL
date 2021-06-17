@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>css_008_pseudo</title>
+ <style type="text/css">
+ 
+    /* p라는 요소가 첫 번째 자식 요소로 사용이 되었을 때 p에 스타일을 적용한다. */
+	/* p 요소가 부모 요소의 첫번째 자식요소로 사용될 때 스타일 적용 */
+   p:first-child{
+	   background-color: yellow;
+   }
+  
+ </style>
+</head>
+<body>
+	<div>
+	<!-- p요소가 div요소의 두번째 자식요소로 사용이 
+                 되었기 때문에  여기에는 스타일이 적용이 안됨 -->
+		<span>div의 span요소</span>
+		<p>div의 두번째 자식</p>
+		<p>div의 세번째 자식</p>
+	</div>
+	<div>
+	<!-- div요소의 첫번째 자식요소로 p요소가 사용이
+                 되였기 때문에  여기에는 스타일이 적용이 됨 -->
+		<p>두번째 div요소의 자식</p>
+	</div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>css_002_selector</title>
+  <style type="text/css">
+   /* css 주석은 이렇게 달아야 한다.. */
+   /* 선택자 우선 순위 */
+
+   /* 0001 */
+   p{
+	   color:red;
+	   font-size:30px;
+   }
+
+   p{
+	   background-color:yellow;
+	   color:blue; /* 우선순위가 같을 때 마지막에 정의된 스타일이 적용됨 */
+   }
+
+   /* 0010 */
+   .order{
+	   color:green;
+   } /* 그린 색상이 우선순위가 더 높으므로 덱스트 색상 바뀜 */
+
+   /* 0100 */
+   #unit{
+	   color:orange;
+   }
+
+
+  </style>
+</head>
+<body>
+	<!--
+		하나의 요소에 여러 스타일이 설정되어 있을 때
+		우선순위가 높은 스타일이 적용된다.
+		선택지(selector) 우선순위
+		요소명 : 0001
+		class : 0010
+		id : 0100
+		inline : 1000
+	-->
+	<p>test1</p>
+	                            <!-- 1000 -->
+	<p class="order" id="unit" style="color:purple;">test2</p>
+	<p id="unit">test3</p>
+	<p class="order">test4</p>
+</body>
+</html>

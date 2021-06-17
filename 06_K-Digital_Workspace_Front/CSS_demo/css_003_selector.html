@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>css_003_selector</title>
+<style type="text/css">
+
+/* 0002 = 0001 + 0001 */
+ body h1 {color:red}
+ /* body의 자손들 중 h1은 색이 레드 (title1, title2 텍스트가 레트)*/
+
+/* 0001 */
+h1 {color:orange;}
+/* 0002 우선순위에 눌려서 표시 안됨 */
+
+/* 각각 0001 */
+h1, p {color:orchid}
+/* 쉼표가 들어가면 각각이라는 뜻 h1 과 p 각각 */
+/* p는 스타일 적용이 되고 h1은 앞서 적용한 우선순위에 의해 적용된다. */
+
+/* 0011 = 0001 + 0010 */
+h1.blue{color:pink}
+/* .뒤에는 class를 의미함, h1이라는 요소에서 클래스가 blue 되어있을 때 스타일을 적용해라 */
+/* h1.blue 와 h1. blue 는 의미가 달라진다 띄어쓰기 하나에도 주의! */
+
+/* 0110 = 0100 + 0010 */
+#id1 .blue{color:yellowgreen}
+
+/* !!!권장하는 방법 아님!!! 해도 해도 안될때..... 그냥 있다는 것만 알아두자 */
+/* !import 은 우선순위 계산이 무시되고 무조건 적용된다 */
+/* h1, p {color:orchid} 이게 무시되고 아래 blue 색으로 적용 */
+p {color:blue !important}
+</style>
+</head>
+<body>
+	<h1>title1</h1>
+	<div>
+		<div>
+			<h1 class='blue'>title2</h1>
+		</div>
+	</div>
+	<p>우선순위는 요소들에 적용할 스타일이 중복될 때 
+	        적용되는 스타일을 계산하는 방법이다.</p>
+
+	<p>요소들에 스타일을 적용하기 위해서는 선택자를 지정해서 설정할 수 있다.</p>
+</body>
+</html>

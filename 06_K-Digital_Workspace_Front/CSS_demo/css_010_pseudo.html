@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>css_010_pseudo</title>
+<style type="text/css">
+
+/* p요소 중에 짝수 요소인 것만 스타일 적용 */
+ p:nth-child(even){
+	 background-color: red;
+ }
+
+/* p요소가 아닌것은 제외한다 오로지 p만 셌을 때 짝수번 자식 요소 스타일 적용 */ 
+p:nth-of-type(even){
+	color:blue
+}
+</style>
+</head>
+<body>
+	<div>  <!-- p:nth-child 요소 세기 / p:nth-of-type 요소 세기-->
+		<p>computer</p> <!--1 홀수-->  <!--1 홀수-->
+		<span>test</span>  <!--2 짝수-->
+		<p>monitor</p>  <!--3 홀수-->  <!--2 짝수-->
+		<p>television</p>  <!--4 짝수-->  <!--3 홀수-->
+		<p>desk</p>  <!--5 홀수-->  <!--4 짝수-->
+		<p>top</p>  <!--6 짝수-->  <!--5 홀수--> 
+	</div>
+</body>
+</html>

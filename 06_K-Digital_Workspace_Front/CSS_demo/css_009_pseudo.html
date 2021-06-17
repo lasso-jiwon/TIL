@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>css_009_pseudo</title>
+<style type="text/css">
+
+/* 2번째 자식 요소는 span 이기 때문에 적용 안됨 */
+ p:nth-child(2){
+	 background-color: red;
+ }
+</style>
+</head>
+<body>
+	<div>
+		<p>computer</p>
+		<!-- <span>test</span> -->  <!-- 두 번째 자식 요소는 span 이기 때문에 스타일 적용이 안된다.-->
+		<p>monitor</p>
+		<p>television</p>
+		<p>desk</p>
+		<p>top</p>
+	</div>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>css_018_border</title>
+<style type="text/css">
+.dv1 {
+	width: 100px;
+	height: 100px;
+	background-color: yellow;
+	/* 크기 따로따로 위치 조정 가능 */
+	/*border-top-width: 5px;
+	border-right-width: 10px;
+	border-bottom-width: 15px;
+	border-left-width: 20px; */
+	/* border속성에 값을 지정을 할때 방향별로 다른 값을 지정을 할때 시계방향으로 설정한다.*/
+	border-width: 5px 10px 15px 20px;
+	/* border-top-style: solid; 
+   border-right-style: dashed;
+   border-bottom-style: double;
+   border-left-style: dotted; */
+	border-style: solid dashed double dotted;
+	/*  border-top-color: aqua;
+   border-right-color: blue;
+   border-bottom-color: green;
+   border-left-color: maroon; */
+	border-color: aqua blue green maroon;
+}
+
+.dv2 {
+	width: 100px;
+	height: 100px;
+	background-color: olive;
+	/*  border-top-width: 5px;
+	border-right-width: 10px;
+	border-bottom-width: 5px;
+	border-left-width: 10px; */
+	/* 5px은 상하에 적용되고 10px은 좌우에 적용된다.*/
+	border-width: 5px 10px;
+	/* border-top-style: solid;
+	border-right-style: dashed;
+	border-bottom-style: solid;
+	border-left-style: dashed; */
+	border-style: solid dashed;
+	/* border-top-color: aqua;
+	border-right-color: blue;
+	border-bottom-color: aqua;
+	border-left-color: blue; */
+	border-color: aqua blue;
+}
+
+.dv3 {
+	width: 100px;
+	height: 100px;
+	background-color: olive;
+	
+	/* border-top-width: 5px;
+	border-right-width: 10px;
+	border-bottom-width: 20px;
+	border-left-width: 10px; */
+	
+	border-width: 5px 10px 20px;
+	
+	border-style:solid;
+	border-color:black;
+}
+</style>
+</head>
+<body>
+	<div class="wrap">
+		<div class="dv1"></div>
+		<div class="dv2"></div>
+	</div>
+
+	<div class="dv3"></div>
+</body>
+</html>
+
+

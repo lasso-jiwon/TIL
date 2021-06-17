@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>css_011_pseudo</title>
+<style type="text/css">
+
+/* p요소의 첫 번째 글자만 스타일 적용 */
+/* border 은 순서가 꼭 있어서 맞춰야 하고 뒤에 black 컬러는 디폴트가 black  이라서 생략이 가능하다 */
+ p:first-letter{
+     color:red;
+     font-size:25px;
+     border:1px solid black
+ }
+</style>
+</head>
+<body>
+<h1>주요내용</h1>
+<p>In the following example, the selector  <!-- I 에만 스타일 적용함-->
+ matches the first element in all</p>
+</body>
+</html>

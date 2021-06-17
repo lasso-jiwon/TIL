@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>css_014_margin</title>
+<style type="text/css">
+* {
+	margin: 0px;
+	padding: 0px;
+	border-width: 0px;
+}
+
+/* wrap 크기값 설정, 높이 130 */
+.wrap {
+	width:160px;
+	height: 260px;
+	background-color: yellow;
+}
+
+/* aa : 아래에 마진값 주기, 높이 130 */
+.aa {
+	width: 100px;
+	height: 100px;
+	background-color: red;
+	border-top: 10px solid black;
+	border-bottom: 10px solid black;
+	 margin-bottom:10px; 
+}
+
+/* bb : 위에 마진값 주기, 높이 130*/
+.bb {
+	width: 100px;
+	height: 100px;
+	background-color: blue;
+	border-top: 10px solid gray;
+	border-bottom: 10px solid gray;
+	margin-top:15px;
+}
+
+#m1{
+ width:100px;
+ height:99px;
+ background-color: blue; 
+ /* m2의 margin값이 top에 적용되도록 하기 위해서 설정한다. */
+ padding-top:1px;
+}
+
+#m2{
+  width:80px;
+  height:80px;
+  background-color: yellow;
+  margin:10px;  
+}
+
+</style>
+</head>
+<body>
+	<div class="wrap">
+		<div class="aa">one</div>
+		<div class="bb">two</div>
+	</div>
+
+	<div class="inline">
+		<span class="sp1">span1</span><span class="sp2">span2</span>
+	</div>
+	<p class="cc">test test test test test</p>
+
+	<div id="m1">
+		<div id="m2">test</div>
+	</div>
+</body>
+</html>
+
+
+

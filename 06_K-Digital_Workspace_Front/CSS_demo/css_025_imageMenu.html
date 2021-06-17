@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>css_025_imageMenu</title>
+<style type="text/css">
+* {
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+}
+
+body {
+	margin-left: 20px;
+}
+
+
+/* h1 메뉴 글자 안보이게 설정 */
+h1 {
+	width: 0px;
+	height: 0px;
+	visibility: hidden;
+	text-indent: -2000px;
+}
+
+ul.mainMenu{
+	width: 1208px;
+	height: 104px;
+	background-color:peachpuff;
+}
+
+ul.mainMenu li{
+	list-style-type: none;
+	border: 2px solid black;
+	float: left;
+	border-left: 0px;
+}
+
+ul.mainMenu li a{
+	display: block;
+	width: 300px;
+	height: 100px;
+}
+
+ul.mainMenu li.mail a{
+	background-image: url('images/mail.gif');
+	background-position: left top;
+}
+
+ul.mainMenu li.mail a:hover {
+	/* background-position: right bottom; */
+	background-position: -300px 0px;
+	background-repeat: no-repeat;
+}
+
+</style>
+</head>
+<body>
+	<h1>메뉴</h1>
+	<ul class="mainMenu">
+		<li class="mail"><a href="#">메일</a></li>
+		<li class="cafe"><a href="#">카페</a></li>
+		<li class="blog"><a href="#">블로그</a></li>
+		<li class="kin"><a href="#">지식in</a></li>
+	</ul>
+</body>
+</html>

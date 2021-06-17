@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>css_021_float</title>
+<style type="text/css">
+
+/*
+ block은 바닥에 붙어 있고 inline 요소는 바닥에서 떨어져 있는 상태이다.
+ 자식 요소요 float를 설정하는 순간 block요소는 inline처럼 바닥에서 떨어진다.
+
+ 부모요소 : width, height을 지정하지 않으면 기본적으로 width은 부모 요소의 크기를 상속받고
+          height은 자식의 크기에 영향을 받는다.
+ 자식요소 : float이 설정이 되면 부모의 height 크기에 영향을 주지 않는다.
+          block 요소는 바닥에서 떨어지면서 부모 요소 height크기에 영향을 주지 않고
+	      inline요소는 원래 바닥에서 떨어져 있었고 부모 요소 height크기에 영향을 주지 않는다.
+*/
+
+/*
+ float(플로트): 
+ 1 플로트는 박스의 위치를 부모요소의 안에서 왼쪽 또는 오른쪽으로 이동시키는 기능이다.
+ 2 플로트가 지정된 박스는 문서의 일반적인 흐름에 영향을 받지 않으면서
+    이동된 위치에 떠 있다.
+*/
+
+.wrap{
+  background-color: aqua;
+}
+
+.box1{
+ width:100px;
+ height:100px;
+ background-color: red;
+ float: left;
+}
+
+.box2{
+ width:100px;
+ height:100px;
+ background-color: green;
+ float: left;
+}
+
+.box3{
+ width:100px;
+ height:100px;
+ background-color: blue;
+ float: left;
+}
+
+/* span{
+	float:right
+} */
+
+.other{
+	clear: both;
+}
+
+img{
+	float: right;
+	margin-left: 10px;
+}
+
+.box4{
+	clear:both;
+}
+
+</style>
+</head>
+<body>
+	<div class="wrap">
+		<div class="box1"></div>
+		<div class="box2"></div>
+		<div class="box3"></div>
+		<span>inline</span>
+
+	</div>
+
+	<div class="other" style="background-color: yellow; height: 500px">
+		<img src="images/gosu.jpg" width="200" height="300" alt="영화배우" />
+		<p>연말 미국 금리 인상 전망은 압박요인 (서울=연합뉴스) 최윤정 기자 = 한국은행 기준금리가 사상 최저 수준인
+			현재의 연 1.25%로 동결됐다. 한국은행은 19일 오전 이주열 총재 주재로 금융통화위원회를 열어 기준금리를 연 1.25%로
+			동결했다. 한은 기준금리는 작년 6월 0.25%포인트 내린 이후 이달까지 열린 13차례의 금통위에서 계속 같은 수준에
+			머물렀다. 한은은 지난 6월 금리 인상 가능성을 시사했지만 이후 세 차례 금통위에서 연거푸 동결 결정을 내렸다. 반도체 수출
+			주도로 경제 성장세는 확대됐지만, 북한 리스크와 사드(고고도미사일방어체계·THAAD) 보복에 발목이 잡혔다. 한은은
+			지난번(8월) 금통위에서 국내 경제가 양호한 성장세를 이어갈 것으로 보이지만 지정학적 리스크 등으로 인해 성장 경로
+			불확실성이 크다고 진단했다. 연말 미국 금리 인상 전망은 압박요인 (서울=연합뉴스) 최윤정 기자 = 한국은행 기준금리가 사상
+			최저 수준인 현재의 연 1.25%로 동결됐다. 한국은행은 19일 오전 이주열 총재 주재로 금융통화위원회를 열어 기준금리를 연
+			1.25%로 동결했다. 한은 기준금리는 작년 6월 0.25%포인트 내린 이후 이달까지 열린 13차례의 금통위에서 계속 같은
+			수준에 머물렀다. 한은은 지난 6월 금리 인상 가능성을 시사했지만 이후 세 차례 금통위에서 연거푸 동결 결정을 내렸다.
+
+			반도체 수출 주도로 경제 성장세는 확대됐지만, 북한 리스크와 사드(고고도미사일방어체계·THAAD) 보복에 발목이 잡혔다.
+
+			한은은 지난번(8월) 금통위에서 국내 경제가 양호한 성장세를 이어갈 것으로 보이지만 지정학적 리스크 등으로 인해 성장 경로
+			불확실성이 크다고 진단했다.</p>
+		<div class="box4">This is a demonstration of how different
+			stylesheets can change the layout of your HTML page. You can change
+			the layout of this page by selecting different stylesheets in the
+			menu, or by selecting one of the following links: This is a
+			demonstration of how different stylesheets can change the layout of
+			your HTML page. You can change the layout of this page by selecting
+			different stylesheets in the menu, or by selecting one of the
+			following links: This is a demonstration of how different stylesheets
+			can change the layout of your HTML page. You can change the layout of
+			this page by selecting different stylesheets in the menu, or by
+			selecting one of the following links: This is a demonstration of how
+			different stylesheets can change the layout of your HTML page. You
+			can change the layout of this page by selecting different stylesheets
+			in the menu, or by selecting one of the following links: This is a
+			demonstration of how different stylesheets can change the layout of
+			your HTML page. You can change the layout of this page by selecting
+			different stylesheets in the menu, or by selecting one of the
+			following links:</div>
+	</div>
+</body>
+</html>

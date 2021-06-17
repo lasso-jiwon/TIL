@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>css_013_boxmodel</title>
+<style type="text/css">
+/*
+ Box Model
+ 모든 HTML요소들은 요소를 둘러싸고 있는 박스로 구성되어져 있다.
+ CSS 박스 모델은 HTML요소를 둘러싸고 있는 박스에 대한 정의이며
+ 하나의 요소에 대한 박스는 콘텐츠(내용), 패딩(안쪽 여백), 보더(테두리),
+ 마진(바깥쪽여백)으로 구성된다.
+ 요소 박스의 width은 콘텐츠의 넓이이다.
+ */
+
+/* 어느 브라우저에서나 동일한 값을 주기 위해 초기값을 설정한다! */
+/* 실무에서는 * 로 안하고 p, div 하나하나 넣음 */
+* {
+	margin: 0px;
+	padding: 0px;
+	border-width: 0px;
+}
+
+/*
+  div.aa요소의 가로 box model 총 크기 계산 :140px
+   width+border-left-width + border-right-width +
+   padding-left + padding-right + maring-left + margin-right
+*/
+div.aa {
+	background-color: yellow;
+	width: 80px;
+	height: 100px;
+	border-left-width: 10px;
+	border-right-width: 10px;
+	border-left-style: solid;
+	border-right-style: dotted;
+	border-left-color: olive;
+	border-right-color: black;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+/*
+ div.bb요소의 세로 box model총 크기 계산:160px
+ height + border-top-width + border-bottom-width +
+ padding-top + padding-bottom + margin-top + margin-bottom
+*/
+div.bb {
+	width: 100px;
+	height: 100px;
+	border-top-width:10px;
+	border-top-style: solid;
+	border-top-color: black;
+	border-bottom-width:10px;
+	border-bottom-style:dotted;
+	border-bottom-color: black;
+	padding-top:10px;
+	padding-bottom:10px;
+	margin-top:10px;
+	margin-bottom:10px;
+	background-color: aqua;
+}
+
+</style>
+</head>
+<body>
+	<div class="aa">sample</div>
+	<div class="bb">test</div>
+</body>
+</html>

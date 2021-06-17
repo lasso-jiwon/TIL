@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>css_019_list</title>
+<style type="text/css">
+
+ul {
+	background-color: yellow;
+	width:100px;
+	height: 100px;
+}
+
+ul li {
+	border: 1px solid;
+
+	/* list에 기호를 지정한다. */
+	list-style-type: square;
+
+	/*inside로 지정하면 기호가  li요소 안에 배치가 되고
+     outside로 지정하면 기호가 li요소 밖에 배치가 된다.
+     */
+	 list-style-position: outside;
+
+	/*기호를 이미지로 표현할때 사용되는 스타일이다.*/
+    list-style-image: url('./images/icon.png')
+
+	/* list-style: list-style-type list-style-position
+                    list-style-image*/
+}
+
+</style>
+</head>
+<body>
+	<ul>
+		<li>메뉴1</li>
+		<li>메뉴2</li>
+		<li>메뉴3</li>
+	</ul>
+</body>
+</html>
+
+
+

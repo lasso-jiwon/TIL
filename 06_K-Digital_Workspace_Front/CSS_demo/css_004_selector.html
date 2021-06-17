@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>css_004_selector</title>
+<style type="text/css">
+    /* p.unit는 자식을 의미한다 (띄어쓰기 없음)*/
+	/* p.unit 는 아래 <p class="unit">p요소에 설정된 class속성</p>를 의미함 */
+	/* p요소에서 속성 중 class 속성에 unit값이 설정된 요소에 스타일을 적용한다. */
+	p.unit{
+		background-color:yellow;
+	}
+	/* p .unit 은 자손을 의미한다. (띄어쓰기 주의)*/
+	/* p .unit 는 아래 <span class="unit">p요소의 자손요소인 span요소에 설정된 class속성</span> 를 의미함 */
+	/* p요소 자손 요소 중에 class속성에 unit값이 설정된 요소에 스타일을 적용한다. */
+	p .unit{
+		background-color: aqua;
+	}
+</style>
+
+
+
+</head>
+<body>
+	<p>
+		<span class="unit">p요소의 자손요소인 span요소에 설정된 class속성</span>
+	</p>
+	<p class="unit">p요소에 설정된 class속성</p>
+</body>
+</html>

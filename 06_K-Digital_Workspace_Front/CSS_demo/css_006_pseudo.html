@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>css_006_pseudo</title>
+<style type="text/css">
+/*
+    가상 클래스(pseudo class) : 사용자가 정의한 클래스는 아니지만
+	클래스처럼 사용되며 요소의 상태에 따라 스타일을
+	지정할 때 사용됨다.
+*/
+
+/*
+    기본 스타일
+    a.link{
+	    color:red
+    }
+
+*/
+
+/* a:link 한번도 방문하지 않았을 때의 링크 스타일 */
+a:link{
+	color:red
+}
+
+/* a:visited 이미 방문했던 링크의 스타일 */
+a.visited{
+	color:green
+}
+ 
+ /* 마우스 포인터를 요소에 올려놨을 때의 스타일을 지정한다. */
+ a:hover{
+	 color:blue
+ }
+
+/* 요소가 활성 상태일 때의 스타일을 지정한다. (마우스로 꾸욱 누르고 있는 상태) */
+ a:active{
+	 color:orange
+ }
+
+ /* pesudo class을 작성할 때 link -> visited -> hover -> active 순으로 작성한다. */
+ 
+</style>
+</head>
+<body>
+	<a href="http://www.w3schools.com">W3Schools</a>
+</body>
+</html>
