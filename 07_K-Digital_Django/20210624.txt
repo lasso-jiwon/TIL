@@ -1,0 +1,231 @@
+# shareRes > models.py 에 추가
+class Restaurant(models.Model):
+    category = models.ForeignKey(Category, on_delete=models.SET_DEFAULT, default=3)
+    restaurant_name = models.CharField(max_length = 100)
+    restaurant_link = models.CharField(max_length = 500)
+    restaurant_content = models.TextField()
+    restaurant_keyword = models.CharField(max_length = 50)
+
+# restDoList 가상환경 활성화
+$ conda activate restDoList
+
+# 폴더 이동
+$ cd restproject
+
+$ python manage.py makemigrations
+
+$ python manage.py migrate  
+
+# 확인
+$ python manage.py dbshell
+sqlite> .tables
+sqlite> SELECT * FROM shareRes_restaurant;
+sqlite> .quit
+
+# 서버 실행
+$ python manage.py runserver
+
+# shareRes > views.py 에 추가
+def categoryCreate(request):
+    #return HttpResponse('categoryCreate')
+    return render(request, 'shareRes/categoryCreate.html')
+
+# shareRes > urls.py
+###########################
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('', views.index, name='index'),
+    path('categoryCreate/', views.categoryCreate, name='cateCreatePage'),
+    path('categoryCreate/create', views.Create_category, name='cateCreate'),
+    path('restaurantCreate/', views.restaurantCreat, name='resCreatePage'),
+     path('restaurantDetail/delete', views.Delete_restaurant, name='resDelete'),
+    path('restaurantCreate/create', views.Create_restaurant, name='resCreate'),
+    path('restaurantDetail/<str:res_id>', views.restaurantDetail, name='resDetailPage'),
+    path('restaurantDetail/updatePage/update', views.Update_restaurant, name='resUpdate'),
+    path('restaurantDetail/updatePage/<str:res_id>', views.restaurantUpdate, name='resUpdatePage'),
+]
+###########################
+
+# shareRes > views.py
+###########################
+from django.http.response import HttpResponseRedirect
+from django.shortcuts import render
+from django.http import HttpResponse
+from django.urls import reverse
+
+from .models import *
+
+# Create your views here.
+def index(request):
+    #return HttpResponse('index')
+    categories = Category.objects.all() # select * from shareRes_category;
+    restraunts = Restaurant.objects.all()
+    content = {'categories' : categories, 'restaurants': restraunts}
+    return render(request, 'shareRes/index.html', content)
+
+def categoryCreate(request):
+    #return HttpResponse('categoryCreate')
+    return render(request, 'shareRes/categoryCreate.html')
+
+def Create_category(request):
+    category_name = request.POST['categoryName']
+    new_category = Category(category_name = category_name)
+    new_category.save()
+    return HttpResponseRedirect(reverse('index'))
+
+def restaurantCreat(request):
+    categories = Category.objects.all()
+    content = {'categories': categories}
+    return render(request, 'shareRes/restaurantCreate.html', content)
+
+def Create_restaurant(request):
+    category_id = request.POST['resCategory']
+    category = Category.objects.get(id = category_id)
+    name = request.POST['resTitle']
+    link = request.POST['resLink']
+    content = request.POST['resContent']
+    keyword = request.POST['resLoc']
+    new_res = Restaurant(category = category, restaurant_name = name, restaurant_link = link, restaurant_content = content, restaurant_keyword = keyword)
+    new_res.save()
+    return HttpResponseRedirect(reverse('index'))
+
+def restaurantDetail(request, res_id):
+    restaurant = Restaurant.objects.get(id = res_id) # select * from shareRes_restaurant where id=3(res_id)
+    content = {'restaurant' : restaurant}
+    return render(request, 'shareRes/restaurantDetail.html', content)
+
+def restaurantUpdate(request, res_id):
+    categories  = Category.objects.all()
+    restaurant = Restaurant.objects.get(id = res_id) # select * from shareRes_restaurant where id=3(res_id)
+    content = {'categories' : categories, 'restaurant' : restaurant}
+    return render(request, 'shareRes/restaurantUpdate.html', content)
+
+def Update_restaurant(request):
+    resId = request.POST['resId']
+    change_category_id = request.POST['resCategory']
+    # select * from shareRes_restaurant where id=3(res_id)
+    change_name = request.POST['resTitle']
+    change_category = Category.objects.get(id = change_category_id) 
+    change_link = request.POST['resLink']
+    change_content = request.POST['resContent']
+    change_keyword = request.POST['resLoc']
+
+    # update category=change_category, restaurant_name = change_name, ....
+    # from shareRes_restaurant
+    # where id=3
+    before_restaurant = Restaurant.objects.get(id = resId)
+    before_restaurant.category = change_category
+    before_restaurant.restaurant_name = change_name
+    before_restaurant.restaurant_link = change_link
+    before_restaurant.restaurant_content = change_content
+    before_restaurant.restaurant_keyword = change_keyword
+    before_restaurant.save()
+    return HttpResponseRedirect(reverse('resDetailPage', kwargs={'res_id':resId}))
+
+def Delete_restaurant(request):
+    res_id = request.POST['resId']
+
+    #delete from shareRes_restaurant where id=res_id
+    restaurant = Restaurant.objects.get(id = res_id)
+    restaurant.delete()
+    return HttpResponseRedirect(reverse('index'))
+###########################
+
+
+
+
+# sendEmail 앱(웹) 추가
+$ python manage.py startapp sendEmail
+
+# restproject > restproject > settings.py에 앱 추가
+INSTALLED_APPS = [
+......
+'sendEmail',
+]
+
+# 다운로드 받은 templates.zip 파일 압출해제해서
+sendEmail 폴더 아래에 templates 폴더를 복사한다.
+
+# sendEmail 폴더 밑에 urls.py 파일을 만든다.
+#####################################
+from django.urls import path, include
+from . import views
+
+urlpatterns = [
+    path('send/', views.sendEmail),
+]
+#####################################
+
+# restproject > restproject > urls.py 수정
+#####################################
+urlpatterns = [
+    path('', include('shareRes.urls')),
+    path('sendEmail/', include('sendEmail.urls')),
+    path('admin/', admin.site.urls),
+]
+#####################################
+
+#sendEmail > views.py 내용 변경
+#####################################
+import re
+from django.shortcuts import render
+from django.http import HttpResponse, HttpResponseRedirect
+from django.urls import reverse
+from shareRes.models import *
+import smtplib
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
+from django.core.mail import send_mail, EmailMessage
+from django.template.loader import render_to_string
+
+
+def sendEmail(request):
+    try:
+        checked_res_list = request.POST.getlist('checks')
+        inputReceiver = request.POST['inputReceiver']
+        inputTitle = request.POST['inputTitle']
+        inputContent = request.POST['inputContent']
+
+        print(checked_res_list, '/', inputReceiver, '/', inputTitle, '/', inputContent)
+        restaurants = []
+
+        for checked_res_id in checked_res_list:
+            restaurants.append(Restaurant.objects.get(id = checked_res_id))
+
+        content = {'inputContent':inputContent, 'restaurants': restaurants}
+        msg_html = render_to_string('sendEmail/email_format.html', content)
+        print(msg_html)
+        msg = EmailMessage(subject = inputTitle, body=msg_html, from_email="본인메일@gmail.com", bcc=inputReceiver.split(','))
+        msg.content_subtype = 'html'
+        msg.send()
+
+        return render(request, 'sendEmail/sendSuccess.html')
+
+    except:
+        return render(request, 'sendEmail/sendFail.html')
+#####################################
+
+# restproject > restproject > settings.py
+########################################
+#ALLOWED_HOSTS = [] 삭제하고 아래 코드 추가
+ALLOWED_HOSTS = ["djangopracticeaccount.pythonanywhere.com","127.0.0.1","localhost"]
+
+# Email settings
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'djangoemailtester001@gmail.com'
+EMAIL_HOST_PASSWORD = 'tester001'
+
+########EMAIL_HOST_USER = 'djangoemailtester001@gmail.com'
+########EMAIL_HOST_PASSWORD = 'tester001'
+##############본인 메일로 변경해주세요.
+########################################
+
+
+
+
+

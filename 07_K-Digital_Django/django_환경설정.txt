@@ -1,0 +1,59 @@
+java 기반의 웹프로그램 : spring(스프링)
+python의 기반의 웹프로그램 : django(장고)
+
+python + django   + vscode / pycham
+anaconda + django+ vscode / pycham
+
+#vscode에서 Ctrl + `  한 다음 Terminal에서 아래 내용을 입력한다.
+
+# conda version
+$ conda -V(대문자)
+   conda 4.10.1
+
+# 가상환경(Virtual Environment)을 위한  프로젝트의 독립된 공간을 생성
+File > open Folder... > ToDoList-with-Django
+
+# 가상환경생성
+$ conda create -n ToDoList python=3.8.8 anaconda
+
+# 생성된 가상환경  리스트 확인
+$ conda info --envs 
+
+# 가상 환경 활성화
+$ conda activate ToDoList
+
+# 가상환경을 활성화 할때 아래와 같은 오류가 뜨면 
+You may need to close and restart your shell after running 'conda init'.
+화면오른쪽 >bash을 클릭한 후 [Kill Terminal]을 선택한다.
+그리고 다시 conda activate ToDoList을 입력한다.
+
+(ToDoList)
+i3@DESKTOP-EGYCUNJ ~~~/c/study/ToDoList-with-Django
+
+# 가상환경 비활성화
+$ conda deactivate 
+
+# 가상환경 삭제(수업에서는 실행안함)
+$ conda remove -n ToDoList --all
+
+# django(장고)를 ToDoList 가상환경에 설치하기위해서 ToDoList 활성화한다.
+$ conda activate ToDoList
+
+#django(장고) 설치
+$ conda install django
+
+# django project 생성
+$ django-admin startproject myproject
+
+# 현재 위치가 c/study/ToDoList-with-Django이므로
+   myproject으로 이동을 해야한다.
+$ cd myproject
+
+# c/study/ToDoList-with-Django/myproject으로 경로가 변경되었다.
+
+# server 실행
+$ python manage.py runserver
+
+# chrom을 실행한 다음 아래 주소를 입력한다.
+http://127.0.0.1:8000/  
+

@@ -1,0 +1,143 @@
+java 기반의 웹프로그램 : spring(스프링)
+python의 기반의 웹프로그램 : django(장고)
+
+python + django   + vscode / pycham
+anaconda + django+ vscode / pycham
+
+#vscode에서 Ctrl + `  한 다음 Terminal에서 아래 내용을 입력한다.
+
+# conda version
+$ conda -V(대문자)
+   conda 4.10.1
+
+# 가상환경(Virtual Environment)을 위한  프로젝트의 독립된 공간을 생성
+File > open Folder... > ToDoList-with-Django
+
+# 가상환경생성
+$ conda create -n ToDoList python=3.8.8 anaconda
+
+# 생성된 가상환경  리스트 확인
+$ conda info --envs 
+
+# 가상 환경 활성화
+$ conda activate ToDoList
+
+# 가상환경을 활성화 할때 아래와 같은 오류가 뜨면 
+You may need to close and restart your shell after running 'conda init'.
+화면오른쪽 >bash을 클릭한 후 [Kill Terminal]을 선택한다.
+그리고 다시 conda activate ToDoList을 입력한다.
+
+(ToDoList)
+i3@DESKTOP-EGYCUNJ ~~~/c/study/ToDoList-with-Django
+
+# 가상환경 비활성화
+$ conda deactivate 
+
+# 가상환경 삭제(수업에서는 실행안함)
+$ conda remove -n ToDoList --all
+
+# django(장고)를 ToDoList 가상환경에 설치하기위해서 ToDoList 활성화한다.
+$ conda activate ToDoList
+
+#django(장고) 설치
+$ conda install django
+
+# django project 생성
+$ django-admin startproject myproject
+
+# 현재 위치가 c/study/ToDoList-with-Django이므로
+   myproject으로 이동을 해야한다.
+$ cd myproject
+
+# c/study/ToDoList-with-Django/myproject으로 경로가 변경되었다.
+
+# server 실행
+$ python manage.py runserver
+
+# chrom을 실행한 다음 아래 주소를 입력한다.
+http://127.0.0.1:8000/  
+
+=======================================
+django(장고)에서 패턴 (page 142)
+
+Model          Controller         View       = MVC
+models.py      views.py        templates   = MTV
+
+
+# application 생성(추가)
+# i3@DESKTOP-EGYCUNJ ~~~/c/study/ToDoList-with-Django/myproject경로확인한다.
+$ python manage.py startapp my_to_do_app
+
+# ToDoList-with-Django > my_to_do_app > my_to_do_app > settings.py에서
+  INSTALLED_APPS에  'my_to_do_app'을 추가한다.
+   INSTALLED_APPS = [
+     'django.contrib.admin',
+     'django.contrib.auth',
+     'django.contrib.contenttypes',
+     'django.contrib.sessions',
+     'django.contrib.messages',
+     'django.contrib.staticfiles',
+     'my_to_do_app'
+]
+
+# my_to_do_app 에서  urls.py을 생성한다.
+  urls.py에서 아래 내용을 입력한다.
+ from django.urls import path
+  from . import views
+
+  urlpatterns = [
+       path('', views.index)
+  ]
+
+# my_to_do_app에서 views.py의 index함수를 실행하고 
+  함수결과를  client에 넘겨준다.
+from django.shortcuts import render
+from django.http import HttpResponse
+
+def index(request):
+    return HttpResponse('my_to_do_app first page')
+
+
+# server 실행
+$ python manage.py runserver
+
+# chrome(클라이언트에서 페이지 요청을 한다.)
+ http://127.0.0.1:8000
+
+========================
+[ views.py에서 Html파일을 클라이언트에 응답을 해줄때는 render함수를 사용한다.]
+
+html페이지를 응답을 해줄때
+# my_to_do_app에서 templates폴더를 만드고 하위로 my_to_do_app을 생성한다.
+# 앞단계에서 생성한 my_to_do_app폴더에 index.html을 생성을해서 구현한다.
+
+================================================
+django에서는 table을 model로 표현하고 model을 class으로 정의한다.
+
+# my_to_do_app >models.py 에서 아래 내용 입력
+class Todo(models.Model):
+    content = models.CharField(max_length = 255)
+
+## i3@DESKTOP-EGYCUNJ ~~~/c/study/ToDoList-with-Django/myproject 경로확인
+$ python manage.py makemigrations
+
+# my_to_do_app에 migrations폴더가 생성되고 폴더안에 0001_initial.py파일이 존재한다.
+
+# 데이터베이스에 model을 생성하기 위해서 아래처럼 입력한다.
+$ python manage.py migrate
+
+# model이 잘 생성되었는지 확인
+$ python manage.py dbshell
+
+# 생성된 table 확인
+sqlite> .tables
+
+#table정보 확인
+sqlite> pragma table_info(my_to_do_app);
+   순서 | 이름| 형태| notnull여부  | pk여부
+
+# table의 데이터 검색
+sqlite> SELECT * FROM my_to_do_app_todo;
+
+# sqlite 종료
+sqlite> .quit
