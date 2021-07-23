@@ -1,37 +1,33 @@
 # 데이터 전처리 (데이터 인코딩)
 
 ## 데이터 전처리
-기본 데이터 전처리 사항
+ML 알고리즘은 데이터에 기반하고 있기 때문에 어떤 데이터를 입력하느냐에 따라 결과도 크게 달라짐
+  
+**기본 데이터 전처리 사항**
 - 결손값 / 문자열 값 처리
 - 이상치 제거
 - 피처 선택
   
-데이터 인코딩
+**데이터 인코딩**
 - 레이블 인코딩
 - 원-핫 인코딩
   
-피처 스케일링
+**피처 스케일링**
 - StandardScaler
 - MinMaxScaler
 
-#### 데이터 전처리 (Data Processing)
-ML 알고리즘은 데이터에 기반하고 있기 때문에 어떤 데이터를 입력하느냐에 따라 결과도 크게 달라짐  
-  
-#### 사이킷런 ML 알고리즘의 데이터 기본 조건  
+## 사이킷런 ML 알고리즘의 데이터 기본 조건  
 - 모든 데이터는 숫자형 (정수, 실수) 여야 함 문자열 안됨  
 - 데이터에 빈 값이 없어야 함 (Null 안됨)
   
-#### 사이킷런의 ML 알고리즘 적용 전 기본 처리 사항
-- 결손값 처리
-- 문자열 값 처리
-  
-#### 결손값 처리
+## 사이킷런의 ML 알고리즘 적용 전 기본 처리 사항
+### 결손값 처리
 - NAN, Null 값 허용 안 됨
 - NaN, Null 값을 고정값으로 변환
 - 평균값 대체, 해당 피처 제외 등
 - 주의 : Null값 잘못 처리 시 예측 왜곡 심각
-
-#### 문자열 값 처리
+  
+### 문자열 값 처리
 - 문자열 값을 입력 값으로 허용하지 않음
 - 인코딩 처리하여 숫자형으로 변환
 - 카테고리형 피처는 코드값으로 표현
@@ -43,16 +39,16 @@ ML 알고리즘은 데이터에 기반하고 있기 때문에 어떤 데이터�
 > **참고**  
 피처 벡터화 : 텍스트를 숫자형 벡터 값으로 변환하는 것
 
-#### 피처 선택 / 추출 / 가공
+### 피처 선택 / 추출 / 가공
 - 피처가 많을 때 어떤 피처를 선택할 것인가
 - 우수한 특정 피처만 선택해서 처리하는 것이 좋을 때가 있음
 
-#### 머신러닝의 대표적인 인코딩 방식
+### 머신러닝의 대표적인 인코딩 방식
 - 레이블 인코딩 (Lable Encoding)
 - 원-핫 인코딩 (Ont-Hot Encoding)
 
 ___
-## 레이블 인코딩
+# 레이블 인코딩
 문자열 카테고리 값을 숫자형 카테고리 값으로 변환  
   
 예) 상품 데이터  
@@ -63,7 +59,7 @@ ___
 
 ![image.png](attachment:image.png)
 
-### 레이블 인코딩 예제
+## 레이블 인코딩 예제
 
 
 ```python
@@ -103,7 +99,7 @@ print('디코딩 원본 값 : ', encoder.inverse_transform([4, 5, 2, 0, 3, 3, 1,
     디코딩 원본 값 :  ['전자레인지' '컴퓨터' '믹서' 'TV' '선풍기' '선풍기' '냉장고' '믹서']
 
 
-### 레이블 인코딩 방식 주의 사항
+## 레이블 인코딩 방식 주의 사항
 간단하게 문자열 값을 숫자형 값으로 변환하지만 이는 단순 코드일 뿐 크기와는 상관 없음  
 일부 ML 알고리즘에서 이를 적용할 경우 예측 성능이 떨어지는 경우 발생  
 숫자 값의 크기 특성이 작용하기 때문  
@@ -112,21 +108,21 @@ print('디코딩 원본 값 : ', encoder.inverse_transform([4, 5, 2, 0, 3, 3, 1,
 트리 계ㅕㄹ의 ML알고리즘은 숫자의 이런 특성을 반영하지 않기 때문에 레이블 인코딩 적용할 때 문제 없음  
 
 ___
-## 원-핫 인코딩 (One-Hot Encoding)
+# 원-핫 인코딩 (One-Hot Encoding)
 행 형태의 피처값을 열 형태로 변환한 뒤 피처값 인덱스에 해당하는 컬럼에는 1로 표시하고  
 나머지 칼럼에는 0으로 표시하는 방식  
 사이킷런에서 원-핫 인코딩 : OneHotEncoder 클래스로 쉽게 변환
 
 ![image.png](attachment:image.png)
 
-### 원-핫 인코딩 과정
+## 원-핫 인코딩 과정
 1. 문자열 값을 숫자형 값으로 변환 (레이블 인코딩 사용)
 2. 입력값을 2차원 데이터로 변환
 3. OneHotEncoder 클래스로 원-핫 인코딩 적용
     - fit()
     - trnasform()
 
-### 원-핫 인코딩 예제
+## 원-핫 인코딩 예제
 
 
 ```python
@@ -188,12 +184,13 @@ oh_labels
 
 ```python
 # 2차원 형태로 출력
-print(oh_labels.shape)  # 8행 6열
-print(oh_labels.toarray())
+print('원-핫 인코딩 데이터 차원 :', oh_labels.shape)  # 8행 6열
+print('원-핫 인코딩 데이터\n', oh_labels.toarray())
 ```
 
-    (8, 6)
-    [[1. 0. 0. 0. 0. 0.]
+    원-핫 인코딩 데이터 차원 : (8, 6)
+    원-핫 인코딩 데이터
+     [[1. 0. 0. 0. 0. 0.]
      [0. 1. 0. 0. 0. 0.]
      [0. 0. 0. 0. 1. 0.]
      [0. 0. 0. 0. 0. 1.]
@@ -220,7 +217,7 @@ print(oh_labels)
       (7, 2)	1.0
 
 
-### 원-핫 인코딩 전체 과정
+## 원-핫 인코딩 전체 과정
 
 
 ```python
@@ -261,7 +258,7 @@ print('원-핫 인코딩 데이터 차원 :', oh_labels.shape)
 
 ![image.png](attachment:image.png)
 
-### Pandas API 사용해서 원-핫 인코딩 수행
+## Pandas API 사용해서 원-핫 인코딩 수행
 get_dummies() 사용하면 숫자 변환 과정을 거치지 않고 바로 원-핫 인코딩 변환 가능!
 
 
@@ -470,30 +467,33 @@ pd.get_dummies(df).to_numpy()
 
 ___
 # 피처 스케일링과 정규화
-서로 다른 변수의 값 범위를 일정한 수준으로 맞추는 작업  
-- 표준화 (Standardization)
-- 정규화 (Nomalization)
 
-___
-## 표준화 (Standardization)
-데이터 피처 각 평균이 0이고 분산이 1인 가우시안 정규 분포 (표준 정규 분포)를 가지는 값으로 변환하는 것  
+**피처 스케일링(Feature Scaling)**  
+서로 다른 변수의 값 범위를 일정한 수준으로 맞추는 작업(표준화, 정규화 등)  
   
-> 참고 : 사전에 표준화를 적용해야 하는 알고리즘  
+**표준화(Standardization)**  
+데이터 피처의 각각이 평균이 0이고 분산이 1인 가우시안 정규분포를 가진 값으로 변환  
+  
+**정규화(Normalization)**  
+서로 다른 피처의 크기를 통일하기 위해 크기를 변환해주는 개념 (즉, 개별 데이터 크기를 모두 똑같은 단위로 변경)
+
+## 표준화 (Standardization)
+데이터 피처 각 평균이 0이고 분산이 1인 가우시안 정규 분포 (표준 정규 분포)를 가지는 값으로 변환하는 것   
+  
+참고 : 사전에 표준화를 적용해야 하는 알고리즘  
 선형회귀, 로지스틱 회귀, RBF 커널을 이용하는 서포트 벡터 머신  
 이들 알고리즘은 데이터가 가우시안 정규 분포 (표준 정규 분포)를 가지고 있다고 가정하고 구현함  
 사전에 표준화를 적용 함으로써 예측 성능을 향상시킬 수 있음  
 
-___
 ## 정규화 (Nomalization)
 서로 다른 피처의 크기를 통일하기 위해 크기를 변환해 주는 것  
   
-예) 
+예를들어  
 피처 A : 거리를 나타내는 나타내는 변수 값 범위가 0 ~ 100km  
 피처 B : 금액을 나타내는 변수 값 범위가 0 ~ 100,000,000,000원  
 동일한 크기 단위로 비교하기 위해 최소~최대 범위를 0 ~ 1로 변환
 
-
-### 사이킷런에서 제공하는 대표적인 피처 스케일링 클래스
+그럼 이제 사이킷런에서 제공하는 대표적인 피처 스케일링 클래스에 대해 알아보자
 - StandardScaler
 - MinMaxScaler
 
@@ -536,8 +536,9 @@ print('피처들의 분산 값 :\n', iris_df.var())
 ## StandardScaler 이용 표준화해서 변환
 1. StandardScaler 객체 생성
 2. fit() : 데이터 변환을 위한 기준 정보 설정
-3. transform() : fit() 에서 설정된 정보를 이용해서 데이터 변환
-    - scale 변환된 데이터 세트는 numpy ndarray로 반환
+3. transform() : fit() 에서 설정된 정보를 이용해서 데이터 변환  
+  
+scale 변환된 데이터 세트는 numpy ndarray로 반환됨
 
 
 ```python
@@ -716,7 +717,10 @@ scaler = MinMaxScaler()
 
 # 2)3) 변환
 scaler.fit(iris_df)
-iris_scaled = pd.DataFrame(data=iris_df_scaled, columns = iris.feature_names)
+iris_scaled = scaler.transform(iris_df)
+
+# transform() 시 스케일 변환된 데이터 세트가 NumPy ndarray로 반환돼 이를 DataFrame으로 변환
+iris_df_scaled = pd.DataFrame(data=iris_scaled, columns = iris.feature_names)
 
 print('피처들의 최소 값 :\n', iris_df_scaled.min(), '\n')
 print('피처들의 최대 값 :\n', iris_df_scaled.max())
@@ -725,23 +729,23 @@ print('피처들의 최대 값 :\n', iris_df_scaled.max())
 ```
 
     피처들의 최소 값 :
-     sepal length (cm)   -1.870024
-    sepal width (cm)    -2.433947
-    petal length (cm)   -1.567576
-    petal width (cm)    -1.447076
+     sepal length (cm)    0.0
+    sepal width (cm)     0.0
+    petal length (cm)    0.0
+    petal width (cm)     0.0
     dtype: float64 
     
     피처들의 최대 값 :
-     sepal length (cm)    2.492019
-    sepal width (cm)     3.090775
-    petal length (cm)    1.785832
-    petal width (cm)     1.712096
+     sepal length (cm)    1.0
+    sepal width (cm)     1.0
+    petal length (cm)    1.0
+    petal width (cm)     1.0
     dtype: float64
 
 
 
 ```python
-iris_df
+iris_df_scaled
 ```
 
 
@@ -774,38 +778,38 @@ iris_df
   <tbody>
     <tr>
       <th>0</th>
-      <td>5.1</td>
-      <td>3.5</td>
-      <td>1.4</td>
-      <td>0.2</td>
+      <td>0.222222</td>
+      <td>0.625000</td>
+      <td>0.067797</td>
+      <td>0.041667</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>4.9</td>
-      <td>3.0</td>
-      <td>1.4</td>
-      <td>0.2</td>
+      <td>0.166667</td>
+      <td>0.416667</td>
+      <td>0.067797</td>
+      <td>0.041667</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>4.7</td>
-      <td>3.2</td>
-      <td>1.3</td>
-      <td>0.2</td>
+      <td>0.111111</td>
+      <td>0.500000</td>
+      <td>0.050847</td>
+      <td>0.041667</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>4.6</td>
-      <td>3.1</td>
-      <td>1.5</td>
-      <td>0.2</td>
+      <td>0.083333</td>
+      <td>0.458333</td>
+      <td>0.084746</td>
+      <td>0.041667</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>5.0</td>
-      <td>3.6</td>
-      <td>1.4</td>
-      <td>0.2</td>
+      <td>0.194444</td>
+      <td>0.666667</td>
+      <td>0.067797</td>
+      <td>0.041667</td>
     </tr>
     <tr>
       <th>...</th>
@@ -816,38 +820,38 @@ iris_df
     </tr>
     <tr>
       <th>145</th>
-      <td>6.7</td>
-      <td>3.0</td>
-      <td>5.2</td>
-      <td>2.3</td>
+      <td>0.666667</td>
+      <td>0.416667</td>
+      <td>0.711864</td>
+      <td>0.916667</td>
     </tr>
     <tr>
       <th>146</th>
-      <td>6.3</td>
-      <td>2.5</td>
-      <td>5.0</td>
-      <td>1.9</td>
+      <td>0.555556</td>
+      <td>0.208333</td>
+      <td>0.677966</td>
+      <td>0.750000</td>
     </tr>
     <tr>
       <th>147</th>
-      <td>6.5</td>
-      <td>3.0</td>
-      <td>5.2</td>
-      <td>2.0</td>
+      <td>0.611111</td>
+      <td>0.416667</td>
+      <td>0.711864</td>
+      <td>0.791667</td>
     </tr>
     <tr>
       <th>148</th>
-      <td>6.2</td>
-      <td>3.4</td>
-      <td>5.4</td>
-      <td>2.3</td>
+      <td>0.527778</td>
+      <td>0.583333</td>
+      <td>0.745763</td>
+      <td>0.916667</td>
     </tr>
     <tr>
       <th>149</th>
-      <td>5.9</td>
-      <td>3.0</td>
-      <td>5.1</td>
-      <td>1.8</td>
+      <td>0.444444</td>
+      <td>0.416667</td>
+      <td>0.694915</td>
+      <td>0.708333</td>
     </tr>
   </tbody>
 </table>
